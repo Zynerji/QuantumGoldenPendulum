@@ -1,0 +1,76 @@
+{
+  "bronze": {
+    "best_energy": -6.53206,
+    "best_step": 30,
+    "LSM": -0.08,
+    "lambda_volatility_decay": 0.035,
+    "tau_half": 7,
+    "ACL": 30,
+    "NRAG_star": 3.7747,
+    "composite_score": 7.5,
+    "NAARG": -0.99,
+    "EII": 0.0
+  },
+  "cocktail": {
+    "best_energy": -5.508671,
+    "best_step": 29,
+    "LSM": -0.042,
+    "lambda_volatility_decay": 0.014,
+    "tau_half": 22,
+    "ACL": 5,
+    "NRAG_star": 1.3574,
+    "composite_score": 5.11,
+    "NAARG": -0.12,
+    "EII": 0.0
+  },
+  "golden": {
+    "best_energy": -5.121122,
+    "best_step": 30,
+    "LSM": -0.036,
+    "lambda_volatility_decay": 0.01,
+    "tau_half": 16,
+    "ACL": 30,
+    "NRAG_star": 0.4181,
+    "composite_score": 4.69,
+    "NAARG": 0.19,
+    "EII": 1.7e-05
+  },
+  "chaotic_logistic": {
+    "best_energy": -5.041864,
+    "best_step": 28,
+    "LSM": -0.025,
+    "lambda_volatility_decay": 0.005,
+    "tau_half": 23,
+    "ACL": 30,
+    "NRAG_star": 0.2345,
+    "composite_score": 4.04,
+    "NAARG": 0.27,
+    "EII": 0.0,
+    "entropy_injection_rate": -0.669
+  },
+  "uniform": {
+    "best_energy": -5.365737,
+    "best_step": 22,
+    "LSM": -0.029,
+    "lambda_volatility_decay": -0.032,
+    "tau_half": 3,
+    "ACL": 3,
+    "NRAG_star": 1.0166,
+    "composite_score": 2.82
+  },
+  "harmonic": {
+    "best_energy": -4.945396,
+    "best_step": 17,
+    "LSM": -0.041,
+    "lambda_volatility_decay": 0.007,
+    "tau_half": 17,
+    "ACL": 6,
+    "NRAG_star": -0.0,
+    "composite_score": 4.15
+  },
+  "_metadata": {
+    "predicted_156q_bronze": -51.0,
+    "E_harmonic": -4.945396,
+    "E_uniform": -5.365737
+  }
+}
