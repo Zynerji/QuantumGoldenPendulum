@@ -1,0 +1,7 @@
+mode,best_energy,best_step,is_baseline,wall_time_s,pct_vs_uniform
+bronze,-6.53206,30,False,1176.0,-21.7
+cocktail,-5.508671,29,False,1169.2,-2.7
+uniform,-5.365737,22,True,2147.3,0.0
+golden,-5.121122,30,False,1315.7,4.6
+chaotic_logistic,-5.041864,28,False,1185.9,6.0
+harmonic,-4.945396,17,True,1296.6,7.8
