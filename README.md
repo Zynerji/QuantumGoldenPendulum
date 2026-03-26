@@ -13,6 +13,38 @@ Task gradients in multi-task learning are modeled as coupled wave oscillators (K
 3. Better conservation law adherence (E1->1, L2->pi, L4->sqrt(e))
 4. Lower energy variance across measurement shots
 
+## Results: IBM Marrakesh (March 25, 2026)
+
+**20 qubits, 2 variational layers, 30 SPSA iterations, 4000 shots, 396 QPU jobs.**
+
+| Rank | Mode | Best Energy | vs Best Baseline | Convergence |
+|------|------|-------------|------------------|-------------|
+| 1 | **Bronze (beta_3)** | **-6.532** | **-21.7%** | Monotonic through step 30 |
+| 2 | **Cocktail** | **-5.509** | **-2.7%** | Monotonic through step 29 |
+| 3 | Uniform (baseline) | -5.366 | --- | Peaks step 22, then degrades |
+| 4 | Golden (phi) | -5.121 | +4.6% | Monotonic through step 30 |
+| 5 | Chaotic logistic | -5.042 | +6.0% | Monotonic through step 28 |
+| 6 | Harmonic (baseline) | -4.945 | +7.8% | Peaks step 17, then degrades |
+
+### Verdict
+
+**Steep anti-resonant modes (bronze, cocktail) decisively beat both rational baselines on real quantum hardware.** Bronze achieves 21.7% lower ground-state energy than the best baseline.
+
+The smoking gun is in the convergence dynamics: both baselines exhibit **resonant trapping** -- uniform peaks at step 22 then degrades to -5.278 by step 30, harmonic peaks at step 17 then stalls. Anti-resonant modes never get trapped -- bronze improves monotonically from -3.84 to -6.53 across all 30 iterations because irrational phase spacing prevents the optimizer from falling into periodic orbits.
+
+The golden ratio (the "most irrational" number) is NOT the best mode on noisy hardware. Bronze (steeper phase contrast) wins because greater separation between qubit rotation angles resists noise-induced homogenization.
+
+### Physics takeaway
+
+**Irrational rotation angles in quantum circuits act as a KAM-like stability mechanism: they prevent variational parameters from falling into resonant periodic orbits, enabling sustained optimization where rational encodings get trapped and degrade.**
+
+### Data files
+
+- [`results/experiment_marrakesh_20q.json`](results/experiment_marrakesh_20q.json) -- Full energy trajectories for all 6 modes (30 iterations each)
+- [`results/calibration_experiment.json`](results/calibration_experiment.json) -- Live IBM Marrakesh calibration snapshot (138 good / 18 bad / 0 dead qubits)
+- [`results/calibration_live.json`](results/calibration_live.json) -- Pre-experiment calibration pull
+- Hardware validation jobs: `d72794uv3u3c73ei8p6g` (estimator), `d7279apamkec73a0shb0` (sampler)
+
 ## Quick Start
 
 ```bash
